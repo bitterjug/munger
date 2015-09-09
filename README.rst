@@ -6,7 +6,7 @@ Munger
 This is my project to build an automatic data munger with a web based
 interface.
 
-- Install and run RethinkBD_
+- Install and run RethinkDB_
 
 .. _RethinkDB: http://rethinkdb.com/
 
