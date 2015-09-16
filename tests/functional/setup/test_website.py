@@ -1,5 +1,3 @@
-import pytest
-
 from pytest_bdd import scenario, given, when, then
 
 
@@ -11,15 +9,15 @@ def test_website():
 @given("The server is running")
 def server():
     """ start server """
-    pass
+    return None
 
 
 @when("I visit the site")
-def visit_site(browser):
+def visit_site(browser, server):
     """ load the site in the browser"""
-    pass
+    browser.visit(server.url)
 
 
 @then("I see a webpage")
-def test_page_visible(browser):
-    assert False, "Write the test"
+def page_visible(browser):
+    assert not browser.find_by_tag('h1').is_empty()
