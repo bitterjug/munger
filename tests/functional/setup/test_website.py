@@ -5,11 +5,8 @@ from webapp.apprunner import start, stop
 
 @pytest.yield_fixture
 def app():
-    print("setting up server")
-    thread = start()
-    yield "http://localhost:8192"
-    print("tearing down server")
-    stop(thread)
+    yield start()
+    stop()
 
 
 @scenario('website.feature', 'I visit the website')
