@@ -5,6 +5,7 @@ tornado
 pytest
 pytest-bdd
 pytest-splinter
+pytest-tornado
 
 # Debuging
 ipdb
