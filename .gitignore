@@ -2,3 +2,4 @@
 *.pyc
 .ropeproject
 .ve
+tests.functional.setup.test_website
