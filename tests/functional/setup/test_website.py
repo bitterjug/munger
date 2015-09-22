@@ -1,4 +1,15 @@
+import pytest
 from pytest_bdd import scenario, given, when, then
+from webapp.apprunner import start, stop
+
+
+@pytest.yield_fixture
+def app():
+    print("setting up server")
+    thread = start()
+    yield "http://localhost:8192"
+    print("tearing down server")
+    stop(thread)
 
 
 @scenario('website.feature', 'I visit the website')
@@ -7,17 +18,18 @@ def test_website():
 
 
 @given("The server is running")
-def server():
+def server(app):
     """ start server """
-    return None
+    pass
 
 
 @when("I visit the site")
-def visit_site(browser, server):
+def visit_site(browser, app):
     """ load the site in the browser"""
-    browser.visit(server.url)
+    browser.visit(app)
 
 
 @then("I see a webpage")
 def page_visible(browser):
+    assert browser.status_code.is_success()
     assert not browser.find_by_tag('h1').is_empty()
