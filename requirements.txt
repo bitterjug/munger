@@ -1,8 +1,11 @@
+# The app
 tornado
 
+# Testing
 pytest
 pytest-bdd
 pytest-splinter
 
+# Debuging
 ipdb
 ipython

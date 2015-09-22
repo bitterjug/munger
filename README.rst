@@ -40,6 +40,10 @@ __ https://docs.docker.com/compose/
 Use
 ---
 
+
+To Run Rethinkdb
+================
+
 At the moment all it does is start RethinkDB::
 
     cd docker
@@ -65,3 +69,12 @@ So we can access the RethinkDB admin at::
 
     http://172.17.0.8:8080/
 
+To Run The App
+==============
+
+Build a virtualenv from `requirements.txt` and use it's python to run `main.py`
+
+To Run The Tests
+================
+
+Build a virtualenv from `requirements.txt` and use it's python to run `py.tex` to run all tests.
