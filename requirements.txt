@@ -1,3 +1,5 @@
+tornado
+
 pytest
 pytest-bdd
 pytest-splinter
